@@ -9,10 +9,16 @@
     <string name="previous">Previous</string>
     <string name="first_to_second">First To Second</string>
     <string name="second_to_third">Second To Third</string>
-    <string name="third_to_first">Third To First</string>
+    <string name="third_to_fourth">Third To Fourth</string>
+    <string name="fourth_to_fifth">Fourth To Fifth</string>
+    <string name="fifth_to_first">Fifth To First</string>
+
     <string name="request_http">Request HTTP</string>
+    <string name="generate_qrcode">Generate QR Code</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="hello_third_fragment">Hello third fragment</string>
+    <string name="hello_fourth_fragment">Hello fourth fragment</string>
+    <string name="hello_fifth_fragment">Hello fifth fragment</string>
 </resources>

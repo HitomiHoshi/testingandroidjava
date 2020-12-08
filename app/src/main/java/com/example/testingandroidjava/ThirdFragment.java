@@ -51,7 +51,7 @@ public class ThirdFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_thirdFragment_to_FirstFragment);
+                        .navigate(R.id.action_thirdFragment_to_fourthFragment);
             }
         });
     }
