@@ -41,7 +41,7 @@ public class FifthFragment extends Fragment {
 //                        Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
                         Log.e("SCANNER", "run: " + result.getText() );
                         NavHostFragment.findNavController(FifthFragment.this)
-                                .navigate(R.id.action_fifthFragment_to_FirstFragment);
+                                .navigate(R.id.action_fifthFragment_to_seventhFragment);
                     }
                 });
             }
@@ -64,7 +64,7 @@ public class FifthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_fifthFragment_to_FirstFragment);
+                        .navigate(R.id.action_fifthFragment_to_seventhFragment);
             }
         });
     }

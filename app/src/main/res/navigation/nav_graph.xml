@@ -49,7 +49,25 @@
         android:label="fragment_fifth"
         tools:layout="@layout/fragment_fifth" >
         <action
-            android:id="@+id/action_fifthFragment_to_FirstFragment"
+            android:id="@+id/action_fifthFragment_to_seventhFragment"
+            app:destination="@id/seventhFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixthFragment"
+        android:name="com.example.testingandroidjava.activity.SixthFragment"
+        android:label="fragment_sixth"
+        tools:layout="@layout/fragment_sixth" >
+        <action
+            android:id="@+id/action_sixthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seventhFragment"
+        android:name="com.example.testingandroidjava.activity.SeventhFragment"
+        android:label="fragment_seventh"
+        tools:layout="@layout/fragment_seventh" >
+        <action
+            android:id="@+id/action_seventhFragment_to_sixthFragment"
+            app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>
