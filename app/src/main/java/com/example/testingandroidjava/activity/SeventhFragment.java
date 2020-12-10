@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.testingandroidjava.Albums;
 import com.example.testingandroidjava.FirstFragment;
 import com.example.testingandroidjava.R;
 import com.example.testingandroidjava.ServerCallback;
@@ -43,16 +44,8 @@ public class SeventhFragment extends Fragment {
                 httpService.jsonParse(new ServerCallback() {
                     @SuppressLint("SetTextI18n")
                     @Override
-                    public void onSuccess(JSONObject result) {
-                        try {
-                            int userId = result.getInt("userId");
-                            int id = result.getInt("id");
-                            String title = result.getString("title");
-                            Log.i("JSON",title);
-                            textView.setText(userId + " " + id + " " + title);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    public void onSuccess(Albums result) {
+                            textView.setText(result.userId + " " + result.id + " " + result.title);
                     }
 
                     @Override

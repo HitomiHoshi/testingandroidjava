@@ -9,6 +9,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.testingandroidjava.Albums;
 import com.example.testingandroidjava.ServerCallback;
 
 import org.json.JSONException;
@@ -16,8 +17,7 @@ import org.json.JSONObject;
 
 public class httpRequestService {
 
-    private RequestQueue requestQueue;
-    private String url = "https://jsonplaceholder.typicode.com/albums/1";
+    private final RequestQueue requestQueue;
 
     public httpRequestService(Context ctx){
         requestQueue = Volley.newRequestQueue(ctx);
@@ -25,10 +25,15 @@ public class httpRequestService {
 
     public void jsonParse(final ServerCallback callback){
 
+        String url = "https://jsonplaceholder.typicode.com/albums/1";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                    callback.onSuccess(response);
+                try {
+                    callback.onSuccess(new Albums(response));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 //                try {
 //                    int userId = response.getInt("userId");
 //                    int id = response.getInt("id");
