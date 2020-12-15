@@ -13,12 +13,22 @@
     <string name="fourth_to_fifth">Fourth To Fifth</string>
     <string name="fifth_to_sixth">Fifth To Sixth</string>
     <string name="sixth_to_seventh">Sixth To Seventh</string>
-    <string name="seventh_to_first">Seventh To First</string>
+    <string name="seventh_to_eight">Seventh To Eighth</string>
+    <string name="eight_to_nineth">Eighth To Nineth</string>
+    <string name="nineth_to_tenth">Nineth To Tenth</string>
+    <string name="tenth_to_first">Tenth To First</string>
 
     <string name="request_http">Request HTTP</string>
     <string name="generate_qrcode">Generate QR Code</string>
     <string name="scan_ble">Scan Ble</string>
     <string name="byte_to_hex">byte to hex</string>
+    <string name="random">random</string>
+    <string name="utc">utc: dd/mm/yyyy hh:mm:ss</string>
+    <string name="local">local: dd/mm/yyyy hh:mm:ss</string>
+    <string name="now">now: dd/mm/yyyy hh:mm:ss</string>
+    <string name="convert">convert</string>
+    <string name="direct_call">direct call</string>
+    <string name="dial">Dial Number</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -27,4 +37,7 @@
     <string name="hello_fifth_fragment">Hello fifth fragment</string>
     <string name="hello_sixth_fragment">Hello sixth fragment</string>
     <string name="hello_seventh_fragment">Hello seventh fragment</string>
+    <string name="hello_eight_fragment">Hello eight fragment</string>
+    <string name="hello_nineth_fragment">Hello nineth fragment</string>
+    <string name="hello_tenth_fragment">Hello tenth fragment</string>
 </resources>

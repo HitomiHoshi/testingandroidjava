@@ -67,7 +67,34 @@
         android:label="fragment_seventh"
         tools:layout="@layout/fragment_seventh" >
         <action
-            android:id="@+id/action_seventhFragment_to_sixthFragment"
+            android:id="@+id/action_seventhFragment_to_eightFragment"
+            app:destination="@id/eightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eightFragment"
+        android:name="com.example.testingandroidjava.activity.EightFragment"
+        android:label="fragment_eighth"
+        tools:layout="@layout/fragment_eighth" >
+        <action
+            android:id="@+id/action_eightFragment_to_ninethFragment"
+            app:destination="@id/ninethFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ninethFragment"
+        android:name="com.example.testingandroidjava.activity.NinethFragment"
+        android:label="fragment_nineth"
+        tools:layout="@layout/fragment_nineth" >
+        <action
+            android:id="@+id/action_ninethFragment_to_tenthFragment"
+            app:destination="@id/tenthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tenthFragment"
+        android:name="com.example.testingandroidjava.activity.TenthFragment"
+        android:label="fragment_tenth"
+        tools:layout="@layout/fragment_tenth" >
+        <action
+            android:id="@+id/action_tenthFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>
