@@ -29,6 +29,7 @@
     <string name="convert">convert</string>
     <string name="direct_call">direct call</string>
     <string name="dial">Dial Number</string>
+    <string name="dialog_list">Dialog List</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -40,4 +41,6 @@
     <string name="hello_eight_fragment">Hello eight fragment</string>
     <string name="hello_nineth_fragment">Hello nineth fragment</string>
     <string name="hello_tenth_fragment">Hello tenth fragment</string>
+    <string name="storage">Storage</string>
+    <string name="camera">Camera</string>
 </resources>
