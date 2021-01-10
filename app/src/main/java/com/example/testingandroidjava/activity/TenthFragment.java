@@ -38,7 +38,7 @@ public class TenthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TenthFragment.this)
-                        .navigate(R.id.action_tenthFragment_to_sixthFragment);
+                        .navigate(R.id.action_tenthFragment_to_eleventFragment);
             }
         });
 
