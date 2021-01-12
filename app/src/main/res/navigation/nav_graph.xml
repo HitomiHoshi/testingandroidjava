@@ -103,7 +103,16 @@
         android:label="fragment_eleventh"
         tools:layout="@layout/fragment_eleventh" >
         <action
-            android:id="@+id/action_eleventFragment_to_sixthFragment"
+            android:id="@+id/action_eleventFragment_to_twelfthFragment"
+            app:destination="@id/twelfthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twelfthFragment"
+        android:name="com.example.testingandroidjava.activity.TwelfthFragment"
+        android:label="fragment_twelfth"
+        tools:layout="@layout/fragment_twelfth" >
+        <action
+            android:id="@+id/action_twelfthFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>

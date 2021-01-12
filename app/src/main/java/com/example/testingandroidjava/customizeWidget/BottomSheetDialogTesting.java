@@ -43,9 +43,10 @@ public class BottomSheetDialogTesting extends BottomSheetDialogFragment {
         //set to adjust screen height automatically, when soft keyboard appears on screen
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-        LinearLayout bottomSheet = rootView.findViewById(R.id.linear_layout_bottom_sheet);
-        BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+//        LinearLayout bottomSheet = rootView.findViewById(R.id.linear_layout_bottom_sheet);
+//        BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+//        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
         return rootView;
     }
 

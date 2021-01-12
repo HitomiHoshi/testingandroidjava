@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="108dp"
-            android:text="@string/eleventh_to_first" />
+            android:text="@string/eleventh_to_twelfth" />
 
     </LinearLayout>
 

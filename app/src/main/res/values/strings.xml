@@ -17,7 +17,8 @@
     <string name="eight_to_nineth">Eighth To Nineth</string>
     <string name="nineth_to_tenth">Nineth To Tenth</string>
     <string name="tenth_to_eleventh">Tenth To Eleventh</string>
-    <string name="eleventh_to_first">Eleventh To First</string>
+    <string name="eleventh_to_twelfth">Eleventh To Twelfth</string>
+    <string name="twelfth_to_first">Twelfth To First</string>
 
     <string name="request_http">Request HTTP</string>
     <string name="generate_qrcode">Generate QR Code</string>
@@ -43,6 +44,7 @@
     <string name="hello_nineth_fragment">Hello nineth fragment</string>
     <string name="hello_tenth_fragment">Hello tenth fragment</string>
     <string name="hello_elevent_fragment">Hello eleventh fragment</string>
+    <string name="hello_twelfth_fragment">Hello eleventh fragment</string>
 
     <string name="storage">Storage</string>
     <string name="camera">Camera</string>

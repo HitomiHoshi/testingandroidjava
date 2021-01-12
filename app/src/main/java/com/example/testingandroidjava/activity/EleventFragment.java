@@ -35,7 +35,7 @@ public class EleventFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EleventFragment.this)
-                        .navigate(R.id.action_eleventFragment_to_sixthFragment);
+                        .navigate(R.id.action_eleventFragment_to_twelfthFragment);
             }
         });
 
