@@ -38,7 +38,7 @@ public class TwelfthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TwelfthFragment.this)
-                        .navigate(R.id.action_twelfthFragment_to_sixthFragment);
+                        .navigate(R.id.action_twelfthFragment_to_thirteenFragment);
             }
         });
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/eleventFragment">
+    app:startDestination="@id/twelfthFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -112,7 +112,16 @@
         android:label="fragment_twelfth"
         tools:layout="@layout/fragment_twelfth" >
         <action
-            android:id="@+id/action_twelfthFragment_to_sixthFragment"
+            android:id="@+id/action_twelfthFragment_to_thirteenFragment"
+            app:destination="@id/thirteenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirteenFragment"
+        android:name="com.example.testingandroidjava.activity.ThirteenFragment"
+        android:label="fragment_thirteen"
+        tools:layout="@layout/fragment_thirteen" >
+        <action
+            android:id="@+id/action_thirteenFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>
