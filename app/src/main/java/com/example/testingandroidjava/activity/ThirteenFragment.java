@@ -52,7 +52,7 @@ public class ThirteenFragment extends Fragment implements AdapterView.OnItemSele
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirteenFragment.this)
-                        .navigate(R.id.action_thirteenFragment_to_sixthFragment);
+                        .navigate(R.id.action_thirteenFragment_to_fourteenFragment);
             }
         });
 

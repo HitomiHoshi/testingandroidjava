@@ -121,7 +121,16 @@
         android:label="fragment_thirteen"
         tools:layout="@layout/fragment_thirteen" >
         <action
-            android:id="@+id/action_thirteenFragment_to_sixthFragment"
+            android:id="@+id/action_thirteenFragment_to_fourteenFragment"
+            app:destination="@id/fourteenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourteenFragment"
+        android:name="com.example.testingandroidjava.activity.FourteenFragment"
+        android:label="fragment_fourteenth"
+        tools:layout="@layout/fragment_fourteenth" >
+        <action
+            android:id="@+id/action_fourteenFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>
