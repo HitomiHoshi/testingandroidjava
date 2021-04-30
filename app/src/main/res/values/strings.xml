@@ -20,7 +20,8 @@
     <string name="eleventh_to_twelfth">Eleventh To Twelfth</string>
     <string name="twelfth_to_thirteen">Twelfth To Thirteen</string>
     <string name="thirteen_to_fourteen">Twelfth To fourteen</string>
-    <string name="fourteen_to_first">fourteen To First</string>
+    <string name="fourteen_to_fifteen">fourteen To fifteen</string>
+    <string name="fifteen_to_first">fifteen To First</string>
 
     <string name="request_http">Request HTTP</string>
     <string name="generate_qrcode">Generate QR Code</string>
@@ -49,6 +50,7 @@
     <string name="hello_twelfth_fragment">Hello twelve fragment</string>
     <string name="hello_thirteen_fragment">Hello thirteen fragment</string>
     <string name="hello_fourteen_fragment">Hello fourteen fragment</string>
+    <string name="hello_fifteen_fragment">Hello fifteen fragment</string>
 
     <string name="storage">Storage</string>
     <string name="camera">Camera</string>
@@ -57,6 +59,7 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="open">Open</string>
+    <string name="wifi_scanner">Wifi Scanner</string>
 
     <string-array name="numbers">
         <item>One</item>
