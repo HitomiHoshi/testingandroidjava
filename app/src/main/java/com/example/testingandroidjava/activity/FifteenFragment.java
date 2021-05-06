@@ -72,6 +72,9 @@ public class FifteenFragment extends Fragment {
             Log.e("WIFI enable", "not enabled");
             wifiManager.setWifiEnabled(true);
         }
+        else{
+            Log.e("WIFI enable", "enabled");
+        }
 
         BroadcastReceiver wifiScanReceiver = new BroadcastReceiver() {
             @RequiresApi(api = Build.VERSION_CODES.M)
