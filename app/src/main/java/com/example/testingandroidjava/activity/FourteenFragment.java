@@ -30,7 +30,7 @@ public class FourteenFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FourteenFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_fourteenFragment_to_fifteenFragment);
             }
         });
     }
