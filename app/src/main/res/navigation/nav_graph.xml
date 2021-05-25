@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fifteenFragment">
+    app:startDestination="@id/sixteenFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -139,7 +139,25 @@
         android:label="fragment_fifteen"
         tools:layout="@layout/fragment_fifteen" >
         <action
-            android:id="@+id/action_fifteenFragment_to_sixthFragment"
+            android:id="@+id/action_fifteenFragment_to_sixteenFragment"
+            app:destination="@id/sixteenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixteenFragment"
+        android:name="com.example.testingandroidjava.activity.SixteenFragment"
+        android:label="fragment_sixteen"
+        tools:layout="@layout/fragment_sixteen" >
+        <action
+            android:id="@+id/action_sixteenFragment_to_encryptDecryptPictureFragment"
+            app:destination="@id/encryptDecryptPictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/encryptDecryptPictureFragment"
+        android:name="com.example.testingandroidjava.activity.EncryptDecryptPictureFragment"
+        android:label="fragment_encrypt_decrypt_picture"
+        tools:layout="@layout/fragment_encrypt_decrypt_picture" >
+        <action
+            android:id="@+id/action_encryptDecryptPictureFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>

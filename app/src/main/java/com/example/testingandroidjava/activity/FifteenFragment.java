@@ -61,7 +61,7 @@ public class FifteenFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FifteenFragment.this)
-                        .navigate(R.id.action_fifteenFragment_to_sixthFragment);
+                        .navigate(R.id.action_fifteenFragment_to_sixteenFragment);
             }
         });
 
