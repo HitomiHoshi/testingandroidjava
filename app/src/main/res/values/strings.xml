@@ -66,6 +66,7 @@
     <string name="wifi_scanner">Wifi Scanner</string>
     <string name="encrypt">Encrypt</string>
     <string name="decrypt">Decrypt</string>
+    <string name="send">Send</string>
 
     <string-array name="numbers">
         <item>One</item>

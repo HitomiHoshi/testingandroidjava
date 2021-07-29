@@ -24,6 +24,8 @@ import com.example.testingandroidjava.FirstFragment;
 import com.example.testingandroidjava.R;
 import com.example.testingandroidjava.helper.ImageEncryptor;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -39,11 +41,20 @@ import java.util.Objects;
 
 import javax.crypto.NoSuchPaddingException;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class EncryptDecryptPictureFragment extends Fragment {
 
     static final String FILE_NAME_DECRYPT = "motivate_quotes_decrypt";
     static final String FILE_NAME_ENCRYPT = "motivate_quotes_encrypt.png";
-    Button encryptButton, decryptButton;
+    Button encryptButton, decryptButton, sendButton;
     ImageView decryptImageView;
 
     File myDir;
@@ -64,6 +75,7 @@ public class EncryptDecryptPictureFragment extends Fragment {
         encryptButton = view.findViewById(R.id.encrypt_button);
         decryptButton = view.findViewById(R.id.decrypt_button);
         decryptImageView = view.findViewById(R.id.decrypt_image);
+        sendButton = view.findViewById(R.id.send_button);
 
         myDir = new File(requireActivity().getFilesDir() + "/saved_images");
 //        myDir = new File(Environment.getExternalStorageDirectory() + "/saved_images");
@@ -119,6 +131,36 @@ public class EncryptDecryptPictureFragment extends Fragment {
                 } catch (IOException | NoSuchAlgorithmException | InvalidKeyException | InvalidAlgorithmParameterException | NoSuchPaddingException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                File file=new File(requireActivity().getFilesDir(),FILE_NAME_ENCRYPT);
+                RequestBody requestBody=new MultipartBody.Builder().setType(MultipartBody.FORM)
+                        .addFormDataPart("motivate-desktop",file.getName(),RequestBody.create(MediaType.parse("image/*"),file))
+//                        .addFormDataPart("some_key","some_value")
+//                        .addFormDataPart("submit","submit")
+                        .build();
+
+                Request request=new Request.Builder()
+                        .url("http://10.0.2.2:3000/upload")
+                        .post(requestBody)
+                        .build();
+
+                OkHttpClient client = new OkHttpClient();
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                        Log.e("RESPONSE", "onResponse: " + response);
+                    }
+                });
             }
         });
     }
