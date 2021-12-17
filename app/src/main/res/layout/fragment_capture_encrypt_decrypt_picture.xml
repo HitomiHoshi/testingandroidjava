@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CaptureEncryptDecryptPictureFragment">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_nineteen_fragment" />
+
+    <EditText
+        android:id="@+id/auth_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/data"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button_nineteen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nineteen_to_twenty" />
+
+    <Button
+        android:id="@+id/capture_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/camera" />
+
+    <Button
+        android:id="@+id/capture_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/encrypt" />
+
+    <Button
+        android:id="@+id/capture_decrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/decrypt" />
+
+    <ImageView
+        android:id="@+id/camera_picture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <ImageView
+        android:id="@+id/decrypt_picture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_launcher_foreground" />
+</LinearLayout>

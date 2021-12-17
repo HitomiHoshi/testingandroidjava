@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="@string/seventeen_to_first" />
+        android:text="@string/seventeen_to_eighteen" />
 
     <Button
         android:id="@+id/encrypt_button"
@@ -39,6 +39,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/send" />
+
+    <Button
+        android:id="@+id/get_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get" />
 
     <ImageView
         android:id="@+id/decrypt_image"

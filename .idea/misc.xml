@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/fragment_capture_encrypt_decrypt_picture.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/fragment_encrypt_decrypt_picture.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/fragment_fourteenth.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/fragment_sixteen.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/fragment_xml_request.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/swipe_list.xml" value="0.25" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/swipe_to_refresh.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/nursh/Desktop/Work/Testing Code/testingandroidjava/app/src/main/res/layout/testing_swipe_layout.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

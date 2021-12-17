@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/sixteenFragment">
+    app:startDestination="@id/captureEncryptDecryptPictureFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -157,7 +157,43 @@
         android:label="fragment_encrypt_decrypt_picture"
         tools:layout="@layout/fragment_encrypt_decrypt_picture" >
         <action
-            android:id="@+id/action_encryptDecryptPictureFragment_to_sixthFragment"
+            android:id="@+id/action_encryptDecryptPictureFragment_to_XMLRequestFragment"
+            app:destination="@id/XMLRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/XMLRequestFragment"
+        android:name="com.example.testingandroidjava.activity.XMLRequestFragment"
+        android:label="fragment_xml_request"
+        tools:layout="@layout/fragment_xml_request" >
+        <action
+            android:id="@+id/action_XMLRequestFragment_to_captureEncryptDecryptPictureFragment"
+            app:destination="@id/captureEncryptDecryptPictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/captureEncryptDecryptPictureFragment"
+        android:name="com.example.testingandroidjava.activity.CaptureEncryptDecryptPictureFragment"
+        android:label="fragment_capture_encrypt_decrypt_picture"
+        tools:layout="@layout/fragment_capture_encrypt_decrypt_picture" >
+        <action
+            android:id="@+id/action_captureEncryptDecryptPictureFragment_to_swipeToRefresh"
+            app:destination="@id/swipeToRefresh" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeToRefresh"
+        android:name="com.example.testingandroidjava.activity.SwipeToRefresh"
+        android:label="swipe_to_refresh"
+        tools:layout="@layout/swipe_to_refresh" >
+        <action
+            android:id="@+id/action_swipeToRefresh_to_testingSwipeFragment"
+            app:destination="@id/testingSwipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testingSwipeFragment"
+        android:name="com.example.testingandroidjava.activity.TestingSwipeFragment"
+        android:label="TestingSwipeFragment"
+        tools:layout="@layout/testing_swipe_layout" >
+        <action
+            android:id="@+id/action_testingSwipeFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>

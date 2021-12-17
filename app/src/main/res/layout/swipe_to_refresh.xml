@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_whole_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SwipeToRefresh">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/usernameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/testing_try"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/testing_try"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/nameControllerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/testing_try"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/emergencyContactNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/testing_try"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/emergencyContactPhoneText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/testing_try"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/twenty_to_twenty_one" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

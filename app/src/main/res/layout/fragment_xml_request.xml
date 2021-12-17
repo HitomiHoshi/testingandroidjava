@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.XMLRequestFragment">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_eighteen_fragment" />
+
+    <Button
+        android:id="@+id/button_eighteen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eighteen_to_nineteen" />
+
+    <Button
+        android:id="@+id/get_xml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/get" />
+</LinearLayout>

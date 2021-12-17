@@ -3,6 +3,7 @@ package com.example.testingandroidjava.helper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -20,8 +21,8 @@ public class ImageEncryptor {
 
     public static void encryptToFile(String keyStr, String spectStr, InputStream in, OutputStream out) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException {
         try {
-            IvParameterSpec iv = new IvParameterSpec(spectStr.getBytes("UTF-8"));
-            SecretKeySpec keySpec = new SecretKeySpec(keyStr.getBytes("UTF-8"), ALGO_SECRET_KEY);
+            IvParameterSpec iv = new IvParameterSpec(spectStr.getBytes(StandardCharsets.UTF_8));
+            SecretKeySpec keySpec = new SecretKeySpec(keyStr.getBytes(StandardCharsets.UTF_8), ALGO_SECRET_KEY);
 
             Cipher cipher = Cipher.getInstance(ALGO_IMAGE_ENCRYPTOR);
             cipher.init(Cipher.ENCRYPT_MODE, keySpec, iv);
@@ -42,8 +43,8 @@ public class ImageEncryptor {
 
     public static void decryptToFile(String keyStr, String spectStr, InputStream in, OutputStream out) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException {
         try {
-            IvParameterSpec iv = new IvParameterSpec(spectStr.getBytes("UTF-8"));
-            SecretKeySpec keySpec = new SecretKeySpec(keyStr.getBytes("UTF-8"), ALGO_SECRET_KEY);
+            IvParameterSpec iv = new IvParameterSpec(spectStr.getBytes(StandardCharsets.UTF_8));
+            SecretKeySpec keySpec = new SecretKeySpec(keyStr.getBytes(StandardCharsets.UTF_8), ALGO_SECRET_KEY);
 
             Cipher cipher = Cipher.getInstance(ALGO_IMAGE_ENCRYPTOR);
             cipher.init(Cipher.DECRYPT_MODE, keySpec, iv);

@@ -1,6 +1,8 @@
 package com.example.testingandroidjava.activity;
 
 import android.annotation.SuppressLint;
+import android.app.DownloadManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -54,7 +56,7 @@ public class EncryptDecryptPictureFragment extends Fragment {
 
     static final String FILE_NAME_DECRYPT = "motivate_quotes_decrypt";
     static final String FILE_NAME_ENCRYPT = "motivate_quotes_encrypt.png";
-    Button encryptButton, decryptButton, sendButton;
+    Button encryptButton, decryptButton, sendButton, getButton;
     ImageView decryptImageView;
 
     File myDir;
@@ -76,6 +78,7 @@ public class EncryptDecryptPictureFragment extends Fragment {
         decryptButton = view.findViewById(R.id.decrypt_button);
         decryptImageView = view.findViewById(R.id.decrypt_image);
         sendButton = view.findViewById(R.id.send_button);
+        getButton = view.findViewById(R.id.get_button);
 
         myDir = new File(requireActivity().getFilesDir() + "/saved_images");
 //        myDir = new File(Environment.getExternalStorageDirectory() + "/saved_images");
@@ -84,7 +87,7 @@ public class EncryptDecryptPictureFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EncryptDecryptPictureFragment.this)
-                        .navigate(R.id.action_encryptDecryptPictureFragment_to_sixthFragment);
+                        .navigate(R.id.action_encryptDecryptPictureFragment_to_XMLRequestFragment);
             }
         });
 
@@ -161,6 +164,39 @@ public class EncryptDecryptPictureFragment extends Fragment {
                         Log.e("RESPONSE", "onResponse: " + response);
                     }
                 });
+            }
+        });
+
+        getButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://10.0.2.2:3000/"));
+                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+
+                request.setTitle("Download");
+                request.setDescription("Downloading file...");
+
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis());
+
+                DownloadManager manager = (DownloadManager) requireActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+                manager.enqueue(request);
+
+                File outputFileDecrypt = new File(requireActivity().getFilesDir(), FILE_NAME_DECRYPT);
+                File encryptFile = new File(Environment.DIRECTORY_DOWNLOADS,"1628753596958.png");
+
+                try{
+                    ImageEncryptor.decryptToFile(my_key, my_spec_key, new FileInputStream(encryptFile), new FileOutputStream(outputFileDecrypt));
+                    decryptImageView.setImageURI(Uri.fromFile(outputFileDecrypt));
+                    outputFileDecrypt.delete();
+
+                    Toast.makeText(requireActivity(), "Decrypted", Toast.LENGTH_SHORT).show();
+
+                } catch (IOException | NoSuchAlgorithmException | InvalidKeyException | InvalidAlgorithmParameterException | NoSuchPaddingException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
