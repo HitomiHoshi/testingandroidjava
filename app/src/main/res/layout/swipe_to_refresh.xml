@@ -51,7 +51,7 @@
                 android:textSize="40sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/twenty_to_twenty_one" />

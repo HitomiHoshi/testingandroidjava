@@ -10,8 +10,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.testingandroidjava.R;
 import com.example.testingandroidjava.callback.SignInCallback;
 import com.example.testingandroidjava.data.Message;
 import com.example.testingandroidjava.data.SignIn;
@@ -49,13 +51,13 @@ public class SwipeToRefresh extends Fragment implements SwipeRefreshLayout.OnRef
 
         swipeRefreshLayout.setOnRefreshListener(this);
 
-//        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(FirstFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
+        binding.button20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SwipeToRefresh.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        });
 
         httpService.signIn("adani", "adani123", new SignInCallback() {
 
