@@ -2,6 +2,8 @@ package com.example.testingandroidjava.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +57,7 @@ public class SwipeToRefresh extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SwipeToRefresh.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_swipeToRefresh_to_testingSwipeFragment);
             }
         });
 
@@ -63,7 +65,7 @@ public class SwipeToRefresh extends Fragment implements SwipeRefreshLayout.OnRef
 
             @Override
             public void onSuccessTFA(SignInTFA result) {
-//                Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show();
+//                Toast.makeT                                                                                                                                                                                                ext(requireActivity(), result.message, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -80,6 +82,21 @@ public class SwipeToRefresh extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onError(Message result) {
                 Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if( keyCode == KeyEvent.KEYCODE_BACK )
+                {
+                    Log.e("TAG", "tekan berlakang");
+                    requireActivity().onBackPressed();
+                    return true;
+                }
+                return false;
             }
         });
     }
