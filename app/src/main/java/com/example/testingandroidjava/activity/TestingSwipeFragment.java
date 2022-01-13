@@ -1,21 +1,26 @@
 package com.example.testingandroidjava.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.testingandroidjava.FirstFragment;
 import com.example.testingandroidjava.R;
 import com.example.testingandroidjava.adapter.SwipeAdapter;
+import com.example.testingandroidjava.callback.ControllerSensorSensorListCallback;
 import com.example.testingandroidjava.data.ControllerSensorSensor;
+import com.example.testingandroidjava.data.Message;
 import com.example.testingandroidjava.databinding.FragmentFirstBinding;
 import com.example.testingandroidjava.databinding.TestingSwipeLayoutBinding;
 
@@ -56,7 +61,13 @@ public class TestingSwipeFragment extends Fragment implements SwipeRefreshLayout
         swipeRefreshLayout.setOnRefreshListener(this);
 
         controllerSensorList = new ArrayList<>();
+
+
+        swipeAdapter = new SwipeAdapter(getContext());
+
         recyclerView.setAdapter(swipeAdapter);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
 //        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -65,10 +76,29 @@ public class TestingSwipeFragment extends Fragment implements SwipeRefreshLayout
 //                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
 //            }
 //        });
+        getControllerSensorData();
     }
 
     @Override
     public void onRefresh() {
+        getControllerSensorData();
+    }
 
+    public void getControllerSensorData() {
+        httpService.getSensorByControllerId(String.valueOf(15), new ControllerSensorSensorListCallback() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onSuccess(ArrayList<ControllerSensorSensor> result) {
+                controllerSensorList = result;
+                swipeAdapter.setControllerSensorList(controllerSensorList);
+                swipeAdapter.notifyDataSetChanged();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+
+            @Override
+            public void onError(Message result) {
+                Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

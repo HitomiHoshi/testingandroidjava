@@ -55,7 +55,7 @@ public class SwipeToRefresh extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SwipeToRefresh.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_swipeToRefresh_to_testingSwipeFragment);
             }
         });
 

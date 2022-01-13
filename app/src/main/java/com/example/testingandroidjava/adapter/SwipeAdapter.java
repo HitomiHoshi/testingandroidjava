@@ -53,7 +53,7 @@ public class SwipeAdapter extends RecyclerView.Adapter<SwipeAdapter.ViewHolder>{
         ControllerSensorSensor controllerSensor = list.get(position);
 
         holder.sensorText.setText(controllerSensor.sensor.name);
-        holder.sensorText.setText(controllerSensor.sensor.armStatus);
+        holder.armText.setText(String.valueOf(controllerSensor.sensor.armStatus));
 
     }
 
