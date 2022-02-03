@@ -27,7 +27,8 @@
     <string name="eighteen_to_nineteen">Eighteen To Nineteen</string>
     <string name="nineteen_to_twenty">Nineteen To twenty</string>
     <string name="twenty_to_twenty_one">twenty To twenty-one</string>
-    <string name="twenty_one_to_first">twenty-one To First</string>
+    <string name="twenty_one_to_twenty_two">twenty-one To twenty-two</string>
+    <string name="twenty_two_to_first">twenty-one To First</string>
 
     <string name="request_http">Request HTTP</string>
     <string name="generate_qrcode">Generate QR Code</string>

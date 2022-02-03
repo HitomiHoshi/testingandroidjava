@@ -69,13 +69,13 @@ public class TestingSwipeFragment extends Fragment implements SwipeRefreshLayout
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-//        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(FirstFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
+        binding.button21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(TestingSwipeFragment.this)
+                        .navigate(R.id.action_testingSwipeFragment_to_stringEncodeImageFragment);
+            }
+        });
         getControllerSensorData();
     }
 

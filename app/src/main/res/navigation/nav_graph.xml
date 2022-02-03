@@ -193,7 +193,16 @@
         android:label="TestingSwipeFragment"
         tools:layout="@layout/testing_swipe_layout" >
         <action
-            android:id="@+id/action_testingSwipeFragment_to_sixthFragment"
+            android:id="@+id/action_testingSwipeFragment_to_stringEncodeImageFragment"
+            app:destination="@id/stringEncodeImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stringEncodeImageFragment"
+        android:name="com.example.testingandroidjava.activity.StringEncodeImageFragment"
+        android:label="fragment_string_encode_image"
+        tools:layout="@layout/fragment_string_encode_image" >
+        <action
+            android:id="@+id/action_stringEncodeImageFragment_to_sixthFragment"
             app:destination="@id/sixthFragment" />
     </fragment>
 </navigation>
