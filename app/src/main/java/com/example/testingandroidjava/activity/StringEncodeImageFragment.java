@@ -27,22 +27,25 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.testingandroidjava.BuildConfig;
 import com.example.testingandroidjava.R;
 import com.example.testingandroidjava.databinding.FragmentStringEncodeImageBinding;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 public class StringEncodeImageFragment extends Fragment {
 
     private FragmentStringEncodeImageBinding binding;
 
-    Button cameraButton, encodeImageButton, decodeImageButton;
+    Button cameraButton, encodeImageButton, decodeImageButton, showImageButton;
     ImageView cameraImageView, decodeImageView;
     TextView stringText;
-
-    String imageString;
-    Bitmap photo;
+    Uri imageUri;
+    String imageString, filename;
+    Bitmap photo, decodePhoto;
 
     ActivityResultLauncher<Intent> activityResultCamera;
 
@@ -62,8 +65,10 @@ public class StringEncodeImageFragment extends Fragment {
         encodeImageButton = binding.buttonEncode;
         decodeImageButton = binding.buttonDecode;
         cameraImageView = binding.cameraView;
+        decodeImageView = binding.imageView2;
         stringText = binding.encodeString;
         cameraButton = binding.capture;
+        showImageButton = binding.buttonShown;
 
         activityResultCamera = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
@@ -82,7 +87,13 @@ public class StringEncodeImageFragment extends Fragment {
 
                     assert data != null;
                     photo = (Bitmap) data.getExtras().get("data");
-                    cameraImageView.setImageBitmap(photo);
+//                    cameraImageView.setImageURI(imageUri);
+//                    stringText.setText((CharSequence) imageUri);
+//                    cameraImageView.setImageBitmap(photo);
+                    cameraImageView.setImageURI(uri);
+
+                    cameraImageView.setScaleType(ImageView.ScaleType.FIT_END);
+
 //                    Bitmap resizedbitmap1 = Bitmap.createBitmap(photo, 0,0,105, 120);
 //                    decryptImage.setImageBitmap(resizedbitmap1);
 //
@@ -92,7 +103,6 @@ public class StringEncodeImageFragment extends Fragment {
 
                 } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
                     Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
@@ -101,6 +111,11 @@ public class StringEncodeImageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                filename = "MyPhoto.jpg";
+                File file = new File(Environment.getExternalStorageDirectory(), filename);
+                imageUri = FileProvider.getUriForFile(requireContext(), requireContext().getPackageName() + ".provider", file);
+                cInt.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+
                 activityResultCamera.launch(cInt);
             }
         });
@@ -117,8 +132,16 @@ public class StringEncodeImageFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Bitmap testing = BitmapImage(imageString);
+                decodePhoto = BitmapImage(imageString);
 
+            }
+        });
+
+        showImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // set bitmap on imageView
+                decodeImageView.setImageBitmap(decodePhoto);
             }
         });
 
@@ -137,14 +160,15 @@ public class StringEncodeImageFragment extends Fragment {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
 
         byte[] imageByteArray = byteArrayOutputStream.toByteArray();
+        stringText.setText(Arrays.toString(imageByteArray));
         String encodeImage = Base64.encodeToString(imageByteArray, Base64.DEFAULT);
-        stringText.setText(encodeImage);
+//        stringText.setText(encodeImage);
 
         return encodeImage;
     }
 
     public Bitmap BitmapImage(String testing) {
-
+//        stringText.setText("hehe"+testing);
 //        String donwloadImage = jsonObject.getString("image");
 //        String encode = Base64.encodeToString(testing.getBytes(), Base64.DEFAULT);
 //        byte[] bytes = Base64.decode(encode, Base64.DEFAULT);
@@ -155,11 +179,17 @@ public class StringEncodeImageFragment extends Fragment {
 
         // decode base64 string
         byte[] bytes = Base64.decode(testing, Base64.DEFAULT);
+        stringText.setText("hehe" + Arrays.toString(bytes));
         // Initialize bitmap
-        Bitmap decodedBitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-        // set bitmap on imageView
+        Bitmap decodedBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+
+//        Bitmap bmp = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+//        ByteBuffer buffer = ByteBuffer.wrap(bytes);
+//        bmp.copyPixelsFromBuffer(buffer);
         decodeImageView.setImageBitmap(decodedBitmap);
+        decodeImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         return decodedBitmap;
+//        return bmp;
     }
 }
